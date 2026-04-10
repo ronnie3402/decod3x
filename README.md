@@ -146,6 +146,8 @@ decod3x -f malware.bin -o report.txt
 
 # Pipe-friendly output without colors
 decod3x -i "aGVsbG8=" --no-color
+
+**Note:** If you are getting unexpected results with hashes containing `$`,`&`,`!` ensure you are wrapping the input in single quotes: `decod3x -i 'YOUR_HASH_HERE'`. This avoids shell variable expansion issues.
 ```
 
 ---
