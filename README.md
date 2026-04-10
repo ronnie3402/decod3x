@@ -82,7 +82,7 @@ Unknown data → decod3x → Identified + Next Steps
 
 ### Linux
 ```bash
-git clone https://github.com/yourname/decod3x
+git clone https://github.com/ronnie3402/decod3x
 cd decod3x
 python3 -m venv .venv
 source .venv/bin/activate
