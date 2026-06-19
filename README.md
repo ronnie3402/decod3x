@@ -16,6 +16,9 @@
 
 > **A fast, offline CLI tool for Cybersecurity Professionals and CTF players to rapidly identify unknown data formats — with actionable next steps.**
 
+<img width="1280" height="684" alt="3" src="https://github.com/user-attachments/assets/b72ec048-8863-499a-b47b-1d80ddbf560d" />
+
+
 decod3x analyzes any unknown string or binary file and identifies whether it is an encoding, hash, encrypted data, or classical cipher — all within milliseconds, entirely offline.
 
 ---
@@ -155,23 +158,27 @@ decod3x -i "aGVsbG8=" --no-color
 ## Sample Output
 ```
 ──────────────────────────────────────────────────────
-  ANALYSIS RESULT
+ ANALYSIS RESULT
 ──────────────────────────────────────────────────────
-  [✓] CATEGORY   : HASH
-  [✓] TYPE       : MD5
-  [✓] CONFIDENCE : 92%
-  [i] INFO       : MD5 produces a 128-bit hash.
-                   Widely used but cryptographically broken.
+ [✓] CATEGORY   : ENCRYPTION
+ [✓] TYPE       : OpenSSL Encrypted
+ [✓] CONFIDENCE : 99%
+ [i] INFO       : OpenSSL symmetric encryption always starts with "Salted__".
 
-  NEXT STEPS
+ INDICATORS
+ → Magic bytes match: 53 61 6C 74 65 64 5F 5F
+ → Offset: encrypted_blob
+
+ NEXT STEPS
 ──────────────────────────────────────────────────────
-  [→] Identify source of MD5 hash
-  Tool    : hashlib.md5 in Python
-  Command : crackstation.net / hashcat -m 0
-  ⚠ Risk  : HIGH collision risk — avoid for security use
+ [→] Analyze OpenSSL Encrypted
+ Tool    : openssl enc -d -aes-256-cbc -in file.enc -out file.dec
+ Note    : Password/key required to decrypt
+ ⚠ Risk  : Decryption requires key/password
 ──────────────────────────────────────────────────────
-[✓] Done        : Analysis complete | Time: 0.024s
+[✓] Done        : Analysis complete | Time: 0.0s
 ```
+<img width="1280" height="682" alt="4" src="https://github.com/user-attachments/assets/e7db1adb-269e-40de-a5f3-4867a996d204" />
 
 ---
 
@@ -184,6 +191,8 @@ decod3x -i "aGVsbG8=" --no-color
 | Malware Analysis | Identify encoded payloads and encrypted blobs |
 | Incident Response | Rapid classification of suspicious strings |
 | Penetration Testing | Identify data formats in captured traffic |
+
+
 
 ---
 
