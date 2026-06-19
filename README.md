@@ -210,6 +210,19 @@ decod3x is a **data identification tool only**.
 
 ---
 
+## Technical Learnings
+
+Building decod3x helped me strengthen several practical cybersecurity and software engineering skills:
+
+- Designed a modular Python CLI application using a multi-component architecture (`engine`, `db`, and `utils`).
+- Implemented SQLite-based local data storage and caching for fully offline analysis.
+- Applied cryptography concepts to distinguish between hashes, encodings, encrypted formats, and classical ciphers.
+- Used entropy analysis and pattern recognition techniques for data classification.
+- Developed advanced regular expressions to differentiate visually similar formats and reduce false positives.
+- Built a cross-platform security tool that works consistently on both Windows and Linux environments.
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -221,3 +234,5 @@ This project is licensed under the [MIT License](LICENSE).
 Built for the cybersecurity community.
 
 *"What is this data?" — answered in milliseconds.*
+
+Created by Rohit
