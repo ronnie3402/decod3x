@@ -52,3 +52,9 @@ desktop.ini
 
 *.log
 reports/
+
+# ==============================
+# Temporary File
+# ==============================
+
+tempCodeRunnerFile.py
